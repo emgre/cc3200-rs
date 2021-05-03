@@ -1,0 +1,17 @@
+[package]
+name = "cc3200-hal"
+version = "0.1.0"
+authors = ["Émile Grégoire <eg@emilegregoire.ca>"]
+description = "HAL for the TI CC3200 microcontroller"
+keywords = ["arm", "cortex-m", "cc3200", "hal"]
+categories = ["embedded", "hardware-support", "no-std"]
+license = "MIT"
+edition = "2018"
+
+[dependencies]
+cortex-m = "0.5.8"
+embedded-hal = { version = "0.2.4", features = [ "unproven" ] }
+cc3200-pac = { path="../cc3200-pac", version="0.1.0" }
+
+[features]
+rt = ["cc3200-pac/rt"]

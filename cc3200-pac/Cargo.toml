@@ -1,0 +1,21 @@
+[package]
+name = "cc3200-pac"
+version = "0.1.0"
+authors = ["Émile Grégoire <eg@emilegregoire.ca>"]
+edition = "2018"
+description = "Peripheral access API for TI CC3200 microcontrollers generated using svd2rust"
+keywords = ["arm", "cortex-m", "cc3200", "svd2rust", "pal"]
+categories = ["embedded", "hardware-support", "no-std"]
+license = "MIT"
+exclude = ["svd/*"]
+
+[dependencies]
+cortex-m = "0.7"
+vcell = "0.1.2"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.13"
+
+[features]
+rt = ["cortex-m-rt/device"]

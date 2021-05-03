@@ -1,0 +1,4876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.3" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+  <vendor>Texas Instruments</vendor>
+  <vendorID>ti.com</vendorID>
+  <name>CC3200</name>
+  <version>1.0</version>
+  <description>SimpleLink™ 32-bit Arm Cortex-M4 Wi-Fi® wireless MCU with 2 TLS/SSL and 256kB RAM</description>
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <size>32</size>
+  <cpu>
+    <name>CM4</name>
+    <revision>r2p1</revision>
+    <endian>little</endian>
+    <mpuPresent>false</mpuPresent>
+    <fpuPresent>false</fpuPresent>
+    <nvicPrioBits>3</nvicPrioBits>
+    <vendorSystickConfig>false</vendorSystickConfig>
+  </cpu>
+  <peripherals>
+    <peripheral>
+      <name>WDT</name>
+      <description>Watchdog Timer</description>
+      <baseAddress>0x40000000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>WDTLOAD</name>
+          <description>Watchdog Load</description>
+          <addressOffset>0x000</addressOffset>
+          <access>read-write</access>
+          <resetValue>0xFFFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>WDTLOAD</name>
+              <description>Watchdog Load Value</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>WDTVALUE</name>
+          <description>Watchdog Value</description>
+          <addressOffset>0x004</addressOffset>
+          <access>read-only</access>
+          <resetValue>0xFFFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>WDTVALUE</name>
+              <description>Watchdog Value</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>WDTCTL</name>
+          <description>Watchdog Control</description>
+          <addressOffset>0x008</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x80000000</resetValue>
+          <fields>
+            <field>
+              <name>WRC</name>
+              <description>Write Complete</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>INTTYPE</name>
+              <description>Watchdog Interrupt Type</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>INTEN</name>
+              <description>Watchdog Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>WDTICR</name>
+          <description>Watchdog Interrupt Clear</description>
+          <addressOffset>0x00C</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>WDTINTCLR</name>
+              <description>Watchdog Interrupt Clear</description>
+              <bitRange>[31:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>WDTRIS</name>
+          <description>Watchdog Raw Interrupt Status</description>
+          <addressOffset>0x010</addressOffset>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>WDTRIS</name>
+              <description>Watchdog Raw Interrupt Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>WDTTEST</name>
+          <description>Watchdog Test Mode</description>
+          <addressOffset>0x418</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>STALL</name>
+              <description>Watchdog Stall Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>WDTLOCK</name>
+          <description>Watchdog Lock</description>
+          <addressOffset>0xC00</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>WDTLOCK</name>
+              <description>Watchdog Lock</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>GPIOA0</name>
+      <description>General-Purpose Input/Output Port A0</description>
+      <baseAddress>0x40004000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>GPIODATA</name>
+          <description>GPIO Data</description>
+          <addressOffset>0x3FC</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DATA</name>
+              <description>GPIO Data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIODIR</name>
+          <description>GPIO Data Direction</description>
+          <addressOffset>0x400</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DIR</name>
+              <description>GPIO Data Direction</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIS</name>
+          <description>GPIO Interrupt Sense</description>
+          <addressOffset>0x404</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IS</name>
+              <description>GPIO Interrupt Sense</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIBE</name>
+          <description>GPIO Interrupt Both Edges</description>
+          <addressOffset>0x408</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IBE</name>
+              <description>GPIO Interrupt Both Edges</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIEV</name>
+          <description>GPIO Interrupt Event</description>
+          <addressOffset>0x40C</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IEV</name>
+              <description>GPIO Interrupt Event</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIM</name>
+          <description>GPIO Interrupt Mask Enable</description>
+          <addressOffset>0x410</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IM</name>
+              <description>GPIO Interrupt Mask Enable</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIORIS</name>
+          <description>GPIO Interrupt Raw Status</description>
+          <addressOffset>0x414</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>RIS</name>
+              <description>GPIO Interrupt Raw Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOMIS</name>
+          <description>GPIO Masked Interrupt Status</description>
+          <addressOffset>0x418</addressOffset>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>MIS</name>
+              <description>GPIO Masked Interrupt Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOICR</name>
+          <description>GPIO Interrupt Clear</description>
+          <addressOffset>0x41C</addressOffset>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ICR</name>
+              <description>GPIO Interrupt Clear</description>
+              <bitRange>[7:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>GPIOA1</name>
+      <description>General-Purpose Input/Output Port A1</description>
+      <baseAddress>0x40005000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>GPIODATA</name>
+          <description>GPIO Data</description>
+          <addressOffset>0x3FC</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DATA</name>
+              <description>GPIO Data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIODIR</name>
+          <description>GPIO Data Direction</description>
+          <addressOffset>0x400</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DIR</name>
+              <description>GPIO Data Direction</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIS</name>
+          <description>GPIO Interrupt Sense</description>
+          <addressOffset>0x404</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IS</name>
+              <description>GPIO Interrupt Sense</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIBE</name>
+          <description>GPIO Interrupt Both Edges</description>
+          <addressOffset>0x408</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IBE</name>
+              <description>GPIO Interrupt Both Edges</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIEV</name>
+          <description>GPIO Interrupt Event</description>
+          <addressOffset>0x40C</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IEV</name>
+              <description>GPIO Interrupt Event</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIM</name>
+          <description>GPIO Interrupt Mask Enable</description>
+          <addressOffset>0x410</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IM</name>
+              <description>GPIO Interrupt Mask Enable</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIORIS</name>
+          <description>GPIO Interrupt Raw Status</description>
+          <addressOffset>0x414</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>RIS</name>
+              <description>GPIO Interrupt Raw Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOMIS</name>
+          <description>GPIO Masked Interrupt Status</description>
+          <addressOffset>0x418</addressOffset>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>MIS</name>
+              <description>GPIO Masked Interrupt Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOICR</name>
+          <description>GPIO Interrupt Clear</description>
+          <addressOffset>0x41C</addressOffset>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ICR</name>
+              <description>GPIO Interrupt Clear</description>
+              <bitRange>[7:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>GPIOA2</name>
+      <description>General-Purpose Input/Output Port A2</description>
+      <baseAddress>0x40006000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>GPIODATA</name>
+          <description>GPIO Data</description>
+          <addressOffset>0x3FC</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DATA</name>
+              <description>GPIO Data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIODIR</name>
+          <description>GPIO Data Direction</description>
+          <addressOffset>0x400</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DIR</name>
+              <description>GPIO Data Direction</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIS</name>
+          <description>GPIO Interrupt Sense</description>
+          <addressOffset>0x404</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IS</name>
+              <description>GPIO Interrupt Sense</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIBE</name>
+          <description>GPIO Interrupt Both Edges</description>
+          <addressOffset>0x408</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IBE</name>
+              <description>GPIO Interrupt Both Edges</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIEV</name>
+          <description>GPIO Interrupt Event</description>
+          <addressOffset>0x40C</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IEV</name>
+              <description>GPIO Interrupt Event</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIM</name>
+          <description>GPIO Interrupt Mask Enable</description>
+          <addressOffset>0x410</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IM</name>
+              <description>GPIO Interrupt Mask Enable</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIORIS</name>
+          <description>GPIO Interrupt Raw Status</description>
+          <addressOffset>0x414</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>RIS</name>
+              <description>GPIO Interrupt Raw Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOMIS</name>
+          <description>GPIO Masked Interrupt Status</description>
+          <addressOffset>0x418</addressOffset>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>MIS</name>
+              <description>GPIO Masked Interrupt Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOICR</name>
+          <description>GPIO Interrupt Clear</description>
+          <addressOffset>0x41C</addressOffset>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ICR</name>
+              <description>GPIO Interrupt Clear</description>
+              <bitRange>[7:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>GPIOA3</name>
+      <description>General-Purpose Input/Output Port A3</description>
+      <baseAddress>0x40007000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>GPIODATA</name>
+          <description>GPIO Data</description>
+          <addressOffset>0x3FC</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DATA</name>
+              <description>GPIO Data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIODIR</name>
+          <description>GPIO Data Direction</description>
+          <addressOffset>0x400</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DIR</name>
+              <description>GPIO Data Direction</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIS</name>
+          <description>GPIO Interrupt Sense</description>
+          <addressOffset>0x404</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IS</name>
+              <description>GPIO Interrupt Sense</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIBE</name>
+          <description>GPIO Interrupt Both Edges</description>
+          <addressOffset>0x408</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IBE</name>
+              <description>GPIO Interrupt Both Edges</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIEV</name>
+          <description>GPIO Interrupt Event</description>
+          <addressOffset>0x40C</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IEV</name>
+              <description>GPIO Interrupt Event</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOIM</name>
+          <description>GPIO Interrupt Mask Enable</description>
+          <addressOffset>0x410</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>IM</name>
+              <description>GPIO Interrupt Mask Enable</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIORIS</name>
+          <description>GPIO Interrupt Raw Status</description>
+          <addressOffset>0x414</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>RIS</name>
+              <description>GPIO Interrupt Raw Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOMIS</name>
+          <description>GPIO Masked Interrupt Status</description>
+          <addressOffset>0x418</addressOffset>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>MIS</name>
+              <description>GPIO Masked Interrupt Status</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIOICR</name>
+          <description>GPIO Interrupt Clear</description>
+          <addressOffset>0x41C</addressOffset>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ICR</name>
+              <description>GPIO Interrupt Clear</description>
+              <bitRange>[7:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>ARCM</name>
+      <description>Application Reset-Clock Manager</description>
+      <baseAddress>0x44025000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>CAMCLKEN</name>
+          <description>Camera Clock Enable</description>
+          <addressOffset>0x004</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DSLPCLKEN</name>
+              <description>Deepsleep Clock Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SLPCLKEN</name>
+              <description>Sleep Clock Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RUNCLKEN</name>
+              <description>Run Clock Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CAMSWRST</name>
+          <description>Camera Software Reset</description>
+          <addressOffset>0x008</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ENSTS</name>
+              <description>Enable Status</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SWRST</name>
+              <description>Software Reset</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>MCASPCLKEN</name>
+          <description>I2S Clock Enable</description>
+          <addressOffset>0x014</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>MCASPSWRST</name>
+          <description>I2S Software Reset</description>
+          <addressOffset>0x018</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>SDIOMCLKEN</name>
+          <description>SD Host Clock Enable</description>
+          <addressOffset>0x024</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>SDIOMSWRST</name>
+          <description>SD Host Software Reset</description>
+          <addressOffset>0x028</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>APSPICLKEN</name>
+          <description>SPI Clock Enable</description>
+          <addressOffset>0x030</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>APSPISWRST</name>
+          <description>SPI Software Reset</description>
+          <addressOffset>0x034</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>DMACLKEN</name>
+          <description>DMA Clock Enable</description>
+          <addressOffset>0x048</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>DMASWRST</name>
+          <description>DMA Software Reset</description>
+          <addressOffset>0x04C</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPIO0CLKEN</name>
+          <description>GPIO0 Clock Enable</description>
+          <addressOffset>0x050</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPIO0SWRST</name>
+          <description>GPIO0 Software Reset</description>
+          <addressOffset>0x054</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPIO1CLKEN</name>
+          <description>GPIO1 Clock Enable</description>
+          <addressOffset>0x058</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPIO1SWRST</name>
+          <description>GPIO1 Software Reset</description>
+          <addressOffset>0x05C</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPIO2CLKEN</name>
+          <description>GPIO2 Clock Enable</description>
+          <addressOffset>0x060</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPIO2SWRST</name>
+          <description>GPIO2 Software Reset</description>
+          <addressOffset>0x064</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPIO3CLKEN</name>
+          <description>GPIO3 Clock Enable</description>
+          <addressOffset>0x068</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPIO3SWRST</name>
+          <description>GPIO3 Software Reset</description>
+          <addressOffset>0x06C</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPIO4CLKEN</name>
+          <description>GPIO4 Clock Enable</description>
+          <addressOffset>0x070</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPIO4SWRST</name>
+          <description>GPIO4 Software Reset</description>
+          <addressOffset>0x074</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>WDTCLKEN</name>
+          <description>Watchdog Clock Enable</description>
+          <addressOffset>0x078</addressOffset>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>BAUDCLKSEL</name>
+              <description>Baud Clock Select</description>
+              <bitRange>[25:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DSLPCLKEN</name>
+              <description>Deepsleep Clock Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SLPCLKEN</name>
+              <description>Sleep Clock Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RUNCLKEN</name>
+              <description>Run Clock Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>WDTSWRST</name>
+          <description>Watchdog Software Reset</description>
+          <addressOffset>0x07C</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>UART0CLKEN</name>
+          <description>UART0 Clock Enable</description>
+          <addressOffset>0x080</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>UART0SWRST</name>
+          <description>UART0 Software Reset</description>
+          <addressOffset>0x084</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>UART1CLKEN</name>
+          <description>UART1 Clock Enable</description>
+          <addressOffset>0x088</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>UART1SWRST</name>
+          <description>UART1 Software Reset</description>
+          <addressOffset>0x08C</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPT0CLKEN</name>
+          <description>GPT0 Clock Enable</description>
+          <addressOffset>0x090</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPT0SWRST</name>
+          <description>GPT0 Software Reset</description>
+          <addressOffset>0x094</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPT1CLKEN</name>
+          <description>GPT1 Clock Enable</description>
+          <addressOffset>0x098</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPT1SWRST</name>
+          <description>GPT1 Software Reset</description>
+          <addressOffset>0x09C</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPT2CLKEN</name>
+          <description>GPT2 Clock Enable</description>
+          <addressOffset>0x0A0</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPT2SWRST</name>
+          <description>GPT2 Software Reset</description>
+          <addressOffset>0x0A4</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>GPT3CLKEN</name>
+          <description>GPT3 Clock Enable</description>
+          <addressOffset>0x0A8</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>GPT3SWRST</name>
+          <description>GPT3 Software Reset</description>
+          <addressOffset>0x0AC</addressOffset>
+        </register>
+        <register derivedFrom="CAMCLKEN">
+          <name>I2CCLKEN</name>
+          <description>I2C Clock Enable</description>
+          <addressOffset>0x0D8</addressOffset>
+        </register>
+        <register derivedFrom="CAMSWRST">
+          <name>I2CSWRST</name>
+          <description>I2C Software Reset</description>
+          <addressOffset>0x0DC</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>OCP_SHARED</name>
+      <description>MCU Shared Configuration</description>
+      <baseAddress>0x4402E000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>GPIO_PAD_CONFIG_0</name>
+          <description>GPIO0 / (ANA) (Pin 50) Pad Config</description>
+          <addressOffset>0x0A0</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO0</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_RTS</name>
+                  <description>UART0 Request To Send O (Active Low)</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAXR0</name>
+                  <description>I2S Audio Port Data 0 (RX/TX)</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAXR1</name>
+                  <description>I2S Audio Port Data 1 (RX/TX)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP00</name>
+                  <description>Timer Capture Port</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_CS</name>
+                  <description>General SPI Chip Select</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RTS</name>
+                  <description>UART1 Request To Send O (Active Low)</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_CTS</name>
+                  <description>UART0 Clear To Send Input (Active Low)</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_1</name>
+          <description>GPIO1 (Pin 55) Pad Config</description>
+          <addressOffset>0x0A4</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO1</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_TX</name>
+                  <description>UART0 TX Data</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PIXCLK</name>
+                  <description>Pixel Clock from Parallel Camera Sensor</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_TX</name>
+                  <description>UART1 TX Data</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP01</name>
+                  <description>Timer Capture Port</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_2</name>
+          <description>GPIO2 (Pin 57) Pad Config</description>
+          <addressOffset>0x0A8</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO2</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_RX</name>
+                  <description>UART0 RX Data</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RX</name>
+                  <description>UART1 RX Data</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP02</name>
+                  <description>Timer Capture Port</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_3</name>
+          <description>GPIO3 (Pin 58) Pad Config</description>
+          <addressOffset>0x0AC</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO3</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D3</name>
+                  <description>Parallel Camera Data Bit 3</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_TX</name>
+                  <description>UART1 TX Data</description>
+                  <value>6</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_4</name>
+          <description>GPIO4 (Pin 59) Pad Config</description>
+          <addressOffset>0x0B0</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO4</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D2</name>
+                  <description>Parallel Camera Data Bit 2</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RX</name>
+                  <description>UART1 RX Data</description>
+                  <value>6</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_5</name>
+          <description>GPIO5 (Pin 60) Pad Config</description>
+          <addressOffset>0x0B4</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO5</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D1</name>
+                  <description>Parallel Camera Data Bit 1</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAXR1</name>
+                  <description>I2S Audio Port Data 1 (RX/TX)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP05</name>
+                  <description>Timer Capture Port</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_6</name>
+          <description>GPIO6 (Pin 61) Pad Config</description>
+          <addressOffset>0x0B8</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO6</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_CTS</name>
+                  <description>UART1 Clear To Send Input (Active Low)</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D0</name>
+                  <description>Parallel Camera Data Bit 0</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_RTS</name>
+                  <description>UART0 Request To Send O (Active Low)</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_CTS</name>
+                  <description>UART0 Clear To Send Input (Active Low)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP06</name>
+                  <description>Timer Capture Port</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_7</name>
+          <description>GPIO7 (Pin 62) Pad Config</description>
+          <addressOffset>0x0BC</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO7</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RTS</name>
+                  <description>UART1 Request To Send O (Active Low)</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_RTS</name>
+                  <description>UART0 Request To Send O (Active Low)</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_TX</name>
+                  <description>UART0 TX Data</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McACLKX</name>
+                  <description>I2S Audio Port Clock O</description>
+                  <value>13</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_8</name>
+          <description>GPIO8 (Pin 63) Pad Config</description>
+          <addressOffset>0x0C0</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO8</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDCARD_IRQ</name>
+                  <description>Interrupt from SD Card</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAFSX</name>
+                  <description>I2S Audio Port Frame Sync</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP06</name>
+                  <description>Timer Capture Port</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_9</name>
+          <description>GPIO9 (Pin 64) Pad Config</description>
+          <addressOffset>0x0C4</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO9</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_PWM05</name>
+                  <description>Pulse-Width Modulated O/P</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDCARD_DATA</name>
+                  <description>SD Card Data</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAXR0</name>
+                  <description>I2S Audio Port Data (Rx/Tx)</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP00</name>
+                  <description>Timer Capture Port</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_10</name>
+          <description>GPIO10 (Pin 1) Pad Config</description>
+          <addressOffset>0x0C8</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO10</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SCL</name>
+                  <description>I2C Clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_PWM06</name>
+                  <description>Pulse-Width Modulated O/P</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDCARD_CLK</name>
+                  <description>SD Card Clock</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_TX</name>
+                  <description>UART1 TX Data</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP01</name>
+                  <description>Timer Capture Port</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_11</name>
+          <description>GPIO11 (Pin 2) Pad Config</description>
+          <addressOffset>0x0CC</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO11</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SDA</name>
+                  <description>I2C Data</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_PWM07</name>
+                  <description>Pulse-Width Modulated O/P</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>XVCLK</name>
+                  <description>Free Clock To Parallel Camera</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDCARD_CMD</name>
+                  <description>SD Card Command Line</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RX</name>
+                  <description>UART1 RX Data</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP02</name>
+                  <description>Timer Capture Port</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAFSX</name>
+                  <description>I2S Audio Port Frame Sync</description>
+                  <value>13</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_12</name>
+          <description>GPIO12 (Pin 3) Pad Config</description>
+          <addressOffset>0x0D0</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO12</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McACLK</name>
+                  <description>I2S Audio Port Clock O</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VSYNC</name>
+                  <description>Parallel Camera Vertical Sync</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SCL</name>
+                  <description>I2C Clock</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_TX</name>
+                  <description>UART0 TX Data</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP03</name>
+                  <description>Timer Capture Port</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_13</name>
+          <description>GPIO13 (Pin 4) Pad Config</description>
+          <addressOffset>0x0D4</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO13</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HSYNC</name>
+                  <description>Parallel Camera Horizontal Sync</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SDA</name>
+                  <description>I2C Data</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_RX</name>
+                  <description>UART0 RX Data</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP04</name>
+                  <description>Timer Capture Port</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_14</name>
+          <description>GPIO14 (Pin 5) Pad Config</description>
+          <addressOffset>0x0D8</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO14</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D4</name>
+                  <description>Parallel Camera Data Bit 4</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SCL</name>
+                  <description>I2C Clock</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_CLK</name>
+                  <description>General SPI Clock</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP05</name>
+                  <description>Timer Capture Port</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_15</name>
+          <description>GPIO15 (Pin 6) Pad Config</description>
+          <addressOffset>0x0DC</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO15</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D5</name>
+                  <description>Parallel Camera Data Bit 5</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SDA</name>
+                  <description>I2C Data</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_MISO</name>
+                  <description>General SPI MISO</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDCARD_DATA</name>
+                  <description>SD Card Data</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP06</name>
+                  <description>Timer Capture Port</description>
+                  <value>13</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_16</name>
+          <description>GPIO16 (Pin 7) Pad Config</description>
+          <addressOffset>0x0E0</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO16</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D6</name>
+                  <description>Parallel Camera Data Bit 6</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_TX</name>
+                  <description>UART1 TX Data</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_MOSI</name>
+                  <description>General SPI MOSI</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDCARD_CLK</name>
+                  <description>SD Card Clock</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP07</name>
+                  <description>Timer Capture Port</description>
+                  <value>13</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_17</name>
+          <description>GPIO17 (Pin 8) Pad Config</description>
+          <addressOffset>0x0E4</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO17</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CAM_D7</name>
+                  <description>Parallel Camera Data Bit 7</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RX</name>
+                  <description>UART1 RX Data</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_CS</name>
+                  <description>General SPI Chip Select</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDCARD_CMD</name>
+                  <description>SD Card Command Line</description>
+                  <value>8</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_18</name>
+          <description>GPIO18 (SPI_FLASH_CLK) (Pin 11) Pad Config</description>
+          <addressOffset>0x0E8</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FLASH_SPI_CLK</name>
+                  <description>Clock To SPI Serial Flash (Fixed Default)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_19</name>
+          <description>GPIO19 (SPI_FLASH_DOUT) (Pin 12) Pad Config</description>
+          <addressOffset>0x0EC</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FLASH_SPI_DOUT</name>
+                  <description>Data To SPI Serial Flash (Fixed Default)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_20</name>
+          <description>GPIO20 (SPI_FLASH_DIN) (Pin 13) Pad Config</description>
+          <addressOffset>0x0F0</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FLASH_SPI_DIN</name>
+                  <description>Data From SPI Serial Flash (Fixed Default)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_21</name>
+          <description>GPIO21 (SPI_FLASH_CS) (Pin 14) Pad Config</description>
+          <addressOffset>0x0F4</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SPI_FLASH_CS</name>
+                  <description>Chip Select To SPI Serial Flash (Fixed Default)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_22</name>
+          <description>GPIO22 (Pin 15) Pad Config</description>
+          <addressOffset>0x0F8</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO22</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP04</name>
+                  <description>Timer Capture Port</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAFSX</name>
+                  <description>I2S Audio Port Frame Sync</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_23</name>
+          <description>GPIO23 (TDI) (Pin 16) Pad Config</description>
+          <addressOffset>0x0FC</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO23</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TDI</name>
+                  <description>JTAG TDI (Reset Default Pinout)</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_TX</name>
+                  <description>UART1 TX Data</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SCL</name>
+                  <description>I2C Clock</description>
+                  <value>9</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_24</name>
+          <description>GPIO24 (TDO) (Pin 17) Pad Config</description>
+          <addressOffset>0x100</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO24</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TDO</name>
+                  <description>JTAG TDO (Reset Default Pinout)</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RX</name>
+                  <description>UART1 RX Data</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP06</name>
+                  <description>Timer Capture Port</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PWM0</name>
+                  <description>Pulse-Width Modulated O/P</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAFSX</name>
+                  <description>I2S Audio Port Frame Sync</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I2C_SDA</name>
+                  <description>I2C Data</description>
+                  <value>9</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_25</name>
+          <description>GPIO25 (SOP2) (Pin 21) Pad Config</description>
+          <addressOffset>0x104</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO25</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAFSX</name>
+                  <description>I2S Audio Port Frame Sync</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_PWM02</name>
+                  <description>Pulse-Width Modulated O/P</description>
+                  <value>9</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_26</name>
+          <description>GPIO26 (ANTSEL1) (Pin 29) Pad Config</description>
+          <addressOffset>0x108</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ANTSEL1</name>
+                  <description>Antenna Selection Control</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_27</name>
+          <description>GPIO27 (ANTSEL2) (Pin 30) Pad Config</description>
+          <addressOffset>0x10C</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ANTSEL2</name>
+                  <description>Antenna Selection Control</description>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_28</name>
+          <description>GPIO28 (TCK) (Pin 19) Pad Config</description>
+          <addressOffset>0x110</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO28</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TCK</name>
+                  <description>JTAG/SWD TCK (Reset Default Pinout)</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_PWM03</name>
+                  <description>Pulse-Width Modulated O/P</description>
+                  <value>8</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_29</name>
+          <description>GPIO29 (TMS) (Pin 20) Pad Config</description>
+          <addressOffset>0x114</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO29</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TMS</name>
+                  <description>JTAG/SWD TMS (Reset Default Pinout)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_30</name>
+          <description>GPIO30 (ANA) (Pin 53) Pad Config</description>
+          <addressOffset>0x118</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO30</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McACLK</name>
+                  <description>I2S Audio Port Clock O</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAFSX</name>
+                  <description>I2S Audio Port Frame Sync</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GT_CCP05</name>
+                  <description>Timer Capture Port</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_MISO</name>
+                  <description>General SPI MISO</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_TX</name>
+                  <description>UART0 TX Data</description>
+                  <value>9</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_31</name>
+          <description>GPIO31 (DCDC_ANA2_SW_P) (Pin 45) Pad Config</description>
+          <addressOffset>0x11C</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO31</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART1_RX</name>
+                  <description>UART1 RX Data</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAXR0</name>
+                  <description>I2S Audio Port Data 0 (RX/TX)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_CLK</name>
+                  <description>General SPI Clock</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_RX</name>
+                  <description>UART0 RX Data</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAFSX</name>
+                  <description>I2S Audio Port Frame Sync</description>
+                  <value>12</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PAD_CONFIG_32</name>
+          <description>GPIO32 (RTC_XTAL_N) (Pin 52) Pad Config</description>
+          <addressOffset>0x120</addressOffset>
+          <access>read-write</access>
+          <size>16</size>
+          <resetValue>0xC61</resetValue>
+          <fields>
+            <field>
+              <name>CONFMODE</name>
+              <description>Configuration Mode</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GPIO32</name>
+                  <description>General-Purpose I/O</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTC_XTAL_N</name>
+                  <description>Connect 32.768kHz XTAL or connect a 100kΩ to Vsupply</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McACLK</name>
+                  <description>I2S Audio Port Clock O</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>McAXR0</name>
+                  <description>I2S Audio Port Data (Only O Mode Supported On Pin 52)</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UART0_RTS</name>
+                  <description>UART0 Request To Send O (Active Low)</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GSPI_MOSI</name>
+                  <description>General SPI MOSI</description>
+                  <value>8</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPENDRAIN</name>
+              <description>Open-drain Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRIVESTRENGTH</name>
+              <description>Drive Strength</description>
+              <bitRange>[7:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <description>Output driver not enabled</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2mA</name>
+                  <description>2 mA</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4mA</name>
+                  <description>4 mA</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6mA</name>
+                  <description>6 mA</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8mA</name>
+                  <description>8 mA</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10mA</name>
+                  <description>10 mA</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12mA</name>
+                  <description>12 mA</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>14mA</name>
+                  <description>14 mA</description>
+                  <value>7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PULLUP</name>
+              <description>Enable internal weak pullup</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PULLDOWN</name>
+              <description>Enable internal weak pulldown</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_ENABLE_OVERRIDE</name>
+              <description>Pad output enable override value</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OUTPUT_BUFFER_OVERRIDE</name>
+              <description>Pad output buffer override enable</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+  </peripherals>
+</device>
